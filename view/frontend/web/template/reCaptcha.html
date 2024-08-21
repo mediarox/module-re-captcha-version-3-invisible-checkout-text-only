@@ -5,11 +5,6 @@
  */
  -->
 <!-- ko if: (isCheckoutReCaptchaRequiredFor($parents[1]))-->
-    <!-- ko if: (getIsInvisibleRecaptcha() && getIsInvisibleRecaptchaTextOnly()) -->
-    <div class="light-recaptcha-text">
-            Diese Website ist durch reCAPTCHA geschützt und es gelten die <a target="_blank" href="https://www.google.com/intl/de/policies/privacy/">Datenschutzbestimmungen</a> und <a target="_blank" href="https://www.google.com/intl/de/policies/terms/">Nutzungsbedingungen</a> von Google.
-    </div>
-    <!-- /ko -->
 <div class="recaptcha-checkout-place-order" data-bind="{
     attr: {
         'id': getReCaptchaIdFor($parents[1]) + '-wrapper'
@@ -30,4 +25,15 @@
     </div>
     <!-- /ko -->
 </div>
+<!-- ko if: (getIsInvisibleRecaptcha() && getIsInvisibleRecaptchaTextOnly()) -->
+<div class="light-recaptcha-text">
+    <span data-bind="html: $t('This site is protected by reCAPTCHA and the Google %data-privacy-link and %service-terms-link apply.').replace('%data-privacy-link', getPrivacyPolicyLink()).replace('%service-terms-link', getConditionsOfUseLink())"></span>
+</div>
+<style>
+    .checkout-agreements-block .recaptcha-checkout-place-order {
+        visibility: hidden;
+        height: 1px;
+    }
+</style>
+<!-- /ko -->
 <!-- /ko -->
