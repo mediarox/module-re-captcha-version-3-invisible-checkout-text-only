@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright 2024 (c) mediarox UG (haftungsbeschraenkt) (http://www.mediarox.de)
+ * See LICENSE for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="recaptcha_frontend">
+            <group id="type_for">
+                <field id="place_order_text_only" translate="label" type="select" sortOrder="176" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Checkout/Placing Order - Enable text only mode</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <depends>
+                        <field id="recaptcha_frontend/type_for/place_order">recaptcha_v3</field>
+                    </depends>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

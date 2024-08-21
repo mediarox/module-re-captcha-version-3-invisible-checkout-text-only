@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright 2024 (c) mediarox UG (haftungsbeschraenkt) (http://www.mediarox.de)
+ * See LICENSE for license details.
+ */
+ -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <!-- plugin to add new config values to the corresponding provider - finally available as this.settings.* in js --> 
+    <type name="Magento\ReCaptchaVersion3Invisible\Model\Frontend\UiConfigProvider">
+        <plugin name="recaptcha-v3-checkout-add-text-only-config" type="ReCaptchaVersion3Invisible\CheckoutTextOnly\Plugin\AddTextOnlyConfig"/>
+    </type>
+</config>

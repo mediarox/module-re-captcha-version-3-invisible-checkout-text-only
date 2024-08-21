@@ -1,0 +1,33 @@
+<!--
+/**
+ * Copyright 2024 (c) mediarox UG (haftungsbeschraenkt) (http://www.mediarox.de)
+ * See LICENSE for license details.
+ */
+ -->
+<!-- ko if: (isCheckoutReCaptchaRequiredFor($parents[1]))-->
+    <!-- ko if: (getIsInvisibleRecaptcha() && getIsInvisibleRecaptchaTextOnly()) -->
+    <div class="light-recaptcha-text">
+            Diese Website ist durch reCAPTCHA geschützt und es gelten die <a target="_blank" href="https://www.google.com/intl/de/policies/privacy/">Datenschutzbestimmungen</a> und <a target="_blank" href="https://www.google.com/intl/de/policies/terms/">Nutzungsbedingungen</a> von Google.
+    </div>
+    <!-- /ko -->
+<div class="recaptcha-checkout-place-order" data-bind="{
+    attr: {
+        'id': getReCaptchaIdFor($parents[1]) + '-wrapper'
+    },
+    'afterRender': renderReCaptchaFor($parents[1])
+}">
+    <div class="g-recaptcha"></div>
+    <!-- ko if: (!getIsInvisibleRecaptcha()) -->
+    <div class="field">
+        <div class="control">
+            <input type="checkbox"
+                   value=""
+                   class="required-captcha checkbox"
+                   name="recaptcha-validate-"
+                   data-validate="{required:true}"
+                   tabindex="-1">
+        </div>
+    </div>
+    <!-- /ko -->
+</div>
+<!-- /ko -->
