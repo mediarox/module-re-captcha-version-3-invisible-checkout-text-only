@@ -11,7 +11,7 @@ define([
     var mixin = {
         urlTemplatePrivacyPolicy: 'https://www.google.com/intl/%1/policies/privacy/',
         urlTemplateConditionsOfUse: 'https://www.google.com/intl/%1/policies/terms/',
-        linkTemplate: '<a href="%url">%link-text</a>',
+        linkTemplate: '<a target="_blank" href="%url">%link-text</a>',
         getIsInvisibleRecaptchaTextOnly: function () {
             if (this.settings === void 0) {
                 return false;
