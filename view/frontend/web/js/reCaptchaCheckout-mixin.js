@@ -16,7 +16,7 @@ define([
             if (this.settings === void 0) {
                 return false;
             }
-            return this.settings.rendering.textOnly;
+            return this.settings.rendering.checkoutTextOnly;
         },
         getLink: function (url, text) {
             return this.linkTemplate

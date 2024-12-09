@@ -22,7 +22,7 @@ class AddTextOnlyConfig
     public function afterGet(Origin $subject, $result)
     {
         if (isset($result['rendering'])) {
-            $result['rendering']['textOnly'] = $this->config->getTextOnly();
+            $result['rendering']['checkoutTextOnly'] = $this->config->getTextOnly();
         }
         return $result;
     }
